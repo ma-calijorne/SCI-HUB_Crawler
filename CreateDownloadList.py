@@ -31,3 +31,21 @@ def download_file(download_url,iCount):
     file.write(response.read())
     file.close()
     print("Completed")
+
+
+def extractCaptchaImage(sMainURL):
+    # Extract Captcha Image
+    bCaptchaPage = False
+    try:
+        if 'captcha' in sMainURL:
+            bCaptchaPage = True
+        # objBrowser.get(sMainURL)
+        # sSourceCode = objBrowser.page_source
+        # soup = BeautifulSoup(str(sSourceCode))
+        # arTAGs = soup.findAll("img", attrs={'id': 'captcha'})
+        # for eachTAG in arTAGs:
+        #     sImageURL = eachTAG.attrs[1][1]
+        # return sImageURL
+    except:
+        print ("Error Parsing HTML for Captcha")
+    return bCaptchaPage
